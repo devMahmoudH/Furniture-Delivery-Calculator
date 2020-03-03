@@ -96,7 +96,7 @@ selectFloor()
 #------------------------------------------------------------------------
 labelOutput = Label(win,text="Delivery Fee: ", font=("arial",10,"bold"))
 labelOutput.grid(row=4,column=1,sticky="W")
-userOutput = Text(win,width = 10, height=1)
+userOutput = Text(win,width = 10, height=1, text=flatRate)
 userOutput.grid(row=4,column=1)
 
 #Calculate Delivery Button
