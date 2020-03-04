@@ -19,7 +19,7 @@ win.iconphoto(False, appLogo) #Icon of the opened app
 #Flat Rate Variable
 #-----------------------------------------------------------------------------------
 
-flatRate = "$40" #$40 is the flat rate
+flatRate = "40" #$40 is the flat rate
 
 
 #Function of the Delivery fee (To Be Completed)
@@ -30,15 +30,27 @@ flatRate = "$40" #$40 is the flat rate
 #Calculation Formula
 #------------------------------------------------------------------------------------
 def calculation():
+    
     x1 = entry1.get() #Get Miles Entry
     if (int(x1) <= 15):
-        showinfo("Delivery Fee", "Delivery Fee is "+ str(flatRate))
-    elif (int(x1) >= 30 ):
-        showinfo("Delivery Fee", "Delivery Fee is $60")
+        io1 = flatRate
+        print (int(io1))
+        userOutputLabel.config(text="$" + io1, font=("arial",10,"bold")) #Actual Output
+    #elif (int(x1) >= 30 ):
+        #showinfo("Delivery Fee", "Delivery Fee is $60")
+    
     #elif (selectFloor) != True:
         #showinfo("Select Floors","Please Select Number of Floors")
     else:
         showinfo("Invalid", "Please Enter a Valid Vlaue!")
+
+#Output Box (In Progress)
+#------------------------------------------------------------------------
+labelOutput = Label(win,text="Delivery Fee: ", font=("arial",10,"bold"))
+labelOutput.grid(row=4,column=1,sticky="W")
+userOutputLabel = Label(win)
+userOutputLabel.grid(row=4,column=1)
+userOutputLabel.config(borderwidth=2, relief="sunken")
 
 
 #Discount Furniture & Linen Title 
@@ -91,13 +103,6 @@ selectFloor()
 
 #p = OptionMenu(win, packageVariable, "Select Package", "Basic")
 
-
-#Output Box (In Progress)
-#------------------------------------------------------------------------
-labelOutput = Label(win,text="Delivery Fee: ", font=("arial",10,"bold"))
-labelOutput.grid(row=4,column=1,sticky="W")
-userOutput = Text(win,width = 10, height=1, text=flatRate)
-userOutput.grid(row=4,column=1)
 
 #Calculate Delivery Button
 #--------------------------------------------------------------------------
