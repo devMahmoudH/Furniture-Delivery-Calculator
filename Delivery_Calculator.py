@@ -19,7 +19,7 @@ win.iconphoto(False, appLogo) #Icon of the opened app
 #Flat Rate Variable
 #-----------------------------------------------------------------------------------
 
-flatRate = "40" #$40 is the flat rate
+flatRate = "50" #$50 is the flat rate
 
 
 #Function of the Delivery fee (To Be Completed)
@@ -32,17 +32,18 @@ flatRate = "40" #$40 is the flat rate
 def calculation():
     
     x1 = entry1.get() #Get Miles Entry
-    if (int(x1) <= 15):
-        io1 = flatRate
-        print (int(io1))
-        userOutputLabel.config(text="$" + io1, font=("arial",10,"bold")) #Actual Output
+    perMile = (str(x1))*0.70
+        
+    io1 = flatRate + perMile
+    print (int(io1))
+    userOutputLabel.config(text="$" + io1, font=("arial",10,"bold")) #Actual Output
     #elif (int(x1) >= 30 ):
         #showinfo("Delivery Fee", "Delivery Fee is $60")
     
     #elif (selectFloor) != True:
         #showinfo("Select Floors","Please Select Number of Floors")
-    else:
-        showinfo("Invalid", "Please Enter a Valid Vlaue!")
+    #else:
+        #showinfo("Invalid", "Please Enter a Valid Vlaue!")
 
 #Output Box (In Progress)
 #------------------------------------------------------------------------
