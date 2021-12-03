@@ -1,6 +1,6 @@
 #A calculator for delivery 
-#Created by Mahmoud
-#For Discount Furniture & Linen
+
+#For Discount Furniture
 #---------------------------------------------------------------------------------
 
 from tkinter import *
